@@ -2,7 +2,10 @@ const header = document.querySelector('.header');
 const menuButton = document.querySelector('.menu-btn');
 const nav = document.querySelector('.nav');
 
-const syncHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 12);
+const syncHeader = () => {
+  header?.classList.toggle('is-scrolled', window.scrollY > 12);
+  document.body.classList.toggle('show-mobile-call', window.scrollY > 120);
+};
 syncHeader();
 window.addEventListener('scroll', syncHeader, { passive: true });
 
